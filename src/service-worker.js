@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const requestNotificationPermission = async () => {
   const permission = await Notification.requestPermission()
   // value of permission can be 'granted', 'default', 'denied'
