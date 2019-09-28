@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
 
+// This file would be appended to `sw.js` in build bundle
+// Please check https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ for more info
+
 const requestNotificationPermission = async () => {
   const permission = await Notification.requestPermission()
   // value of permission can be 'granted', 'default', 'denied'
