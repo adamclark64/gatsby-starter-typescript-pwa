@@ -11,25 +11,25 @@ const requestNotificationPermission = async () => {
   }
 }
 
-function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("/src/service-worker.ts")
-      .then(registration => {
-        console.log(
-          `Service Worker registration complete, scope: '${registration.scope}'`
-        )
-        requestNotificationPermission().then(r => console.log(r))
-      })
-      .catch(error =>
-        console.log(`Service Worker registration failed with error: '${error}'`)
-      )
-  } else {
-    console.log("service worker is not supported")
-  }
-}
+// function registerServiceWorker() {
+//   if ("serviceWorker" in navigator) {
+//     navigator.serviceWorker
+//       .register("/src/service-worker.ts")
+//       .then(registration => {
+//         console.log(
+//           `Service Worker registration complete, scope: '${registration.scope}'`
+//         )
+//         requestNotificationPermission().then(r => console.log(r))
+//       })
+//       .catch(error =>
+//         console.log(`Service Worker registration failed with error: '${error}'`)
+//       )
+//   } else {
+//     console.log("service worker is not supported")
+//   }
+// }
 
-registerServiceWorker()
+// registerServiceWorker()
 
 self.addEventListener("install", function() {
   console.log("Install!")
@@ -45,5 +45,7 @@ self.addEventListener("fetch", function(event) {
 
 self.addEventListener("push", function(event) {
   console.log("Push!", event)
-  self.registration.showNotification("push notification works!")
+  requestNotificationPermission().then(() => {
+    self.registration.showNotification("push notification works!")
+  })
 })
