@@ -1,5 +1,10 @@
 # Gatsby starter with TypeScript and PWA
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/da66f766-c8d1-4389-9825-8d8b6a978378/deploy-status)](https://app.netlify.com/sites/gatsby-starter-ts-pwa/deploys)
+
+- [demo](https://gatsby-starter-ts-pwa.netlify.com/)
+- [Github actions CI/CD](https://github.com/markselby9/gatsby-starter-typescript-pwa/actions)
+
 ## 🥅 Added in this starter
 
 This project is a fork of [official default starter](https://github.com/gatsbyjs/gatsby-starter-default), with some added features which I personally prefer.
