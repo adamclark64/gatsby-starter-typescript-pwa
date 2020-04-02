@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import "./Layout.css"
+import "./layout.css"
 
 interface LayoutProps {
   readonly children?: React.ReactNode | readonly React.ReactNode[]
